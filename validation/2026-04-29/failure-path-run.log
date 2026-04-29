@@ -1,0 +1,4 @@
+round-1: OpenClaw fell back away from requested model anthropic/claude-sonnet-4-6.
+[model-fallback/decision] model fallback decision: decision=skip_candidate requested=anthropic/claude-sonnet-4-6 candidate=anthropic/claude-sonnet-4-6 reason=billing next=openai-codex/gpt-5.4 detail=Provider anthropic has billing issue (skipping all models)
+[model-fallback/decision] model fallback decision: decision=candidate_succeeded requested=anthropic/claude-sonnet-4-6 candidate=openai-codex/gpt-5.4 reason=unknown next=none
+exit_code=1

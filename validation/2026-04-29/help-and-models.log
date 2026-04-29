@@ -1,0 +1,32 @@
+openclaw-consensus
+
+Usage:
+  node src/cli.mjs models
+  node src/cli.mjs run --brief "..." --models model-a,model-b [options]
+
+Commands:
+  models                    List configured API-backed models from the active OpenClaw agent config.
+  run                       Execute one fixed 2-round deliberation run.
+
+Run options:
+  --brief <text>            Brief text to deliberate on.
+  --brief-file <path>       Read the brief from a file.
+  --models <csv>            Comma-separated model list. Required in MVP.
+  --label <text>            Optional human-friendly label.
+  --run-root <path>         Optional explicit run directory.
+  --orchestrator-model <provider/model>
+                            Optional synthesis model. Defaults to the workspace agent primary model.
+
+Notes:
+  - The MVP rejects missing model selection and non-configured models.
+  - Only API-backed models are accepted; ollama/* is rejected in this repo's MVP.
+  - A model call fails if OpenClaw falls back to a different model/provider.
+---
+Configured API-backed models:
+  anthropic/claude-haiku-4-5
+  anthropic/claude-opus-4-6
+  anthropic/claude-sonnet-4-6
+* openai-codex/gpt-5.4
+  openai-codex/gpt-5.5
+
+* primary workspace agent model: openai-codex/gpt-5.4

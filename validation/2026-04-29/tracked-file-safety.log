@@ -1,0 +1,57 @@
+--- git status --short ---
+A  .gitignore
+A  AGENTS.md
+A  LICENSE
+A  README.md
+A  SKILL.md
+A  docs/AI_BOOTSTRAP.md
+A  docs/ARTIFACTS.md
+A  docs/COMMANDS.md
+A  docs/OUTPUT_TEMPLATE.md
+A  docs/PRINCIPLES.md
+A  docs/PRODUCT_SPEC.md
+A  docs/PROMPT_CONTRACT.md
+A  docs/README.md
+A  docs/RUNBOOK.md
+A  docs/RUNTIME_CONTRACT.md
+A  docs/SKILL_LIFECYCLE.md
+A  docs/START_HERE.md
+A  package.json
+A  scripts/install-skill.sh
+A  scripts/uninstall-skill.sh
+A  src/cli.mjs
+A  tasks/2026-04-29-build-generic-2-round-mvp-skill.md
+A  tasks/2026-04-29-ship-openclaw-consensus-to-public-skill-hub.md
+A  tasks/TASK_TEMPLATE.md
+A  validation/2026-04-29/brief-failure-path.md
+A  validation/2026-04-29/brief-happy-path.md
+A  validation/2026-04-29/failure-path-run/brief.md
+A  validation/2026-04-29/failure-path-run/round-1/openai-codex__gpt-5.4.md
+A  validation/2026-04-29/failure-path-run/run.json
+A  validation/2026-04-29/happy-path-run/brief.md
+A  validation/2026-04-29/happy-path-run/final.md
+A  validation/2026-04-29/happy-path-run/round-1/openai-codex__gpt-5.4.md
+A  validation/2026-04-29/happy-path-run/round-1/openai-codex__gpt-5.5.md
+A  validation/2026-04-29/happy-path-run/round-2/openai-codex__gpt-5.4.md
+A  validation/2026-04-29/happy-path-run/round-2/openai-codex__gpt-5.5.md
+A  validation/2026-04-29/happy-path-run/run.json
+A  validation/README.md
+
+--- tracked secret-pattern scan ---
+
+--- tracked runtime directories scan ---
+
+--- tracked validation artifacts ---
+validation/2026-04-29/brief-failure-path.md
+validation/2026-04-29/brief-happy-path.md
+validation/2026-04-29/failure-path-run/brief.md
+validation/2026-04-29/failure-path-run/round-1/openai-codex__gpt-5.4.md
+validation/2026-04-29/failure-path-run/run.json
+validation/2026-04-29/happy-path-run/brief.md
+validation/2026-04-29/happy-path-run/final.md
+validation/2026-04-29/happy-path-run/round-1/openai-codex__gpt-5.4.md
+validation/2026-04-29/happy-path-run/round-1/openai-codex__gpt-5.5.md
+validation/2026-04-29/happy-path-run/round-2/openai-codex__gpt-5.4.md
+validation/2026-04-29/happy-path-run/round-2/openai-codex__gpt-5.5.md
+validation/2026-04-29/happy-path-run/run.json
+validation/README.md

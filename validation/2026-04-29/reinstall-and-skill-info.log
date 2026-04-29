@@ -1,0 +1,13 @@
+Installed openclaw-consensus skill copy: /Users/digitalbear/.openclaw/workspace/skills/openclaw-consensus
+🧭 openclaw-consensus ✓ Ready
+
+Run a fixed 2-round cross-model deliberation through the repo-local OpenClaw Consensus runtime.
+
+Details:
+  Source: openclaw-workspace
+  Path: ~/.openclaw/workspace/skills/openclaw-consensus/SKILL.md
+
+Requirements:
+  Binaries: ✓ node, ✓ openclaw
+
+Tip: use `openclaw skills search`, `openclaw skills install`, and `openclaw skills update` for ClawHub-backed skills.
