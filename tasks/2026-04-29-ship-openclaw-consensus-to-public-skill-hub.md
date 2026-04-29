@@ -1,7 +1,7 @@
 # Task: Ship OpenClaw Consensus to GitHub and Keep Hub/Public Claims Truthful
 
 ## Title
-Deliver `openclaw-consensus` as a real GitHub-hosted repo with local-skill proof first, then treat public hub work as a later follow-up.
+Deliver `openclaw-consensus` as a real GitHub-hosted repo with local-skill proof first, then treat hub/public expansion as a later follow-up.
 
 ## Date
 2026-04-29
@@ -11,30 +11,51 @@ Deliver `openclaw-consensus` as a real GitHub-hosted repo with local-skill proof
 - Delivery subagent
 
 ## Status
-- in_progress
+- completed
 
 ## Objective
 Finish the repo as a real local OpenClaw skill, validate it properly, publish it to GitHub, and avoid claiming more than the repo can currently prove.
 
-## Current truth
-The repo now has:
-- a real local skill path
-- a real runtime MVP
-- validation evidence for install/uninstall, happy path, and failure path
+## Final result
+- GitHub repo created: `https://github.com/pstepien-labs/openclaw-consensus`
+- Visibility: `PRIVATE`
+- Default branch: `main`
+- Local repo committed and pushed from commit `f6f0f1e`
 
-The repo does not yet claim:
+## What was completed
+1. ran tracked-file safety checks
+2. reviewed/staged the repo cleanly
+3. committed the finished MVP repo
+4. created the GitHub repo under `pstepien-labs/openclaw-consensus`
+5. pushed `main`
+6. verified remote visibility and remote URL
+
+## Evidence
+### GitHub verification
+- `gh repo view pstepien-labs/openclaw-consensus --json nameWithOwner,visibility,url,isPrivate,defaultBranchRef`
+- result: private repo, `main` default branch, expected URL
+
+### Local proof already captured
+- install: `validation/2026-04-29/install.log`
+- uninstall: `validation/2026-04-29/uninstall.log`
+- reinstall + skill visibility: `validation/2026-04-29/reinstall-and-skill-info.log`
+- help + model inspection: `validation/2026-04-29/help-and-models.log`
+- happy path: `validation/2026-04-29/happy-path-run/` and `validation/2026-04-29/happy-path-readback.log`
+- failure path: `validation/2026-04-29/failure-path-run/` and `validation/2026-04-29/failure-path-readback.log`
+- tracked-file safety: `validation/2026-04-29/tracked-file-safety.log`
+
+## Current truth
+The repo now proves:
+- a real local OpenClaw skill path
+- a real fixed 2-round runtime MVP
+- truthful docs aligned to the code
+- validation evidence for install/uninstall, happy path, and failure path
+- GitHub hosting in a private repo
+
+The repo still does not claim:
 - official skill-hub packaging/submission
 - public social/article rollout
 - broader product surface beyond the MVP
 
-## Remaining work for this task
-1. run tracked-file safety checks
-2. review git state and commit cleanly
-3. create/push GitHub repo
-4. verify remote visibility/state
-5. update this task with repo URL and final release facts
-
-## Rules
-- default GitHub visibility: private
-- do not claim skill-hub readiness beyond future-fit repo structure
-- keep public-facing docs aligned with the validated MVP only
+## Follow-up posture
+If a later step wants skill-hub packaging or a public launch, it should build on this repo as-is and keep the same truthfulness bar.
