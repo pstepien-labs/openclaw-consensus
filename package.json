@@ -1,6 +1,6 @@
 {
   "name": "openclaw-consensus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Repo-local OpenClaw skill and CLI for fixed 2-round cross-model deliberation.",
   "type": "module",
