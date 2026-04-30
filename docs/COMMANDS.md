@@ -70,3 +70,11 @@ node src/cli.mjs run \
 - The repo rejects `ollama/*` models.
 - The repo rejects configured-model fallback: if OpenClaw runs a different model than requested, the run fails and preserves artifacts.
 - `run.json` records whether the orchestrator model was explicit or defaulted from the workspace agent primary model.
+- `run` rejects unknown flags (e.g. typos like `--orchestator-model`) instead of silently ignoring them.
+- `run` accepts `--model-timeout-ms <ms>` to bound each model call (default 5 minutes).
+- `run` rejects `--run-root` paths inside common system directories or pointing at non-empty directories.
+
+## Helper self-checks
+```bash
+node validation/tests/cli-helpers.test.mjs
+```

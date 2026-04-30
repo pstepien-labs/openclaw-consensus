@@ -81,6 +81,17 @@ See `validation/2026-04-29/` for the recorded outputs.
 - runtime outputs live under `runs/`, which is gitignored by default
 - public validation artifacts were checked for tracked secret patterns and scrubbed of machine-local absolute paths where needed
 
+## Hardening posture
+The CLI applies a small set of conservative guardrails. These are belt-and-suspenders, not a sandbox:
+- prompts fence the brief and round outputs with a per-run random nonce so that user-supplied content cannot trivially terminate the fence
+- each model call runs under a per-call timeout (`--model-timeout-ms`, default 5 minutes)
+- default run directories under `runs/` use collision-safe creation (suffix `-2`, `-3`, …) instead of clobbering
+- explicit `--run-root` is rejected if it points at common system paths or at a non-empty directory
+- `run.json` truncates and redacts the brief from any persisted error message
+- the run-time check that openclaw executed the requested model (not a fallback) is the authoritative protection against silent provider substitution
+
+See `validation/tests/cli-helpers.test.mjs` for self-checks of these helpers.
+
 ## Notes on the orchestrator model
 The repo contract says the orchestrator should use the current OpenClaw session model. When the skill is used from chat, the agent should pass that model explicitly to the CLI. For standalone shell use, the CLI falls back to the workspace agent primary model if `--orchestrator-model` is omitted, and records that source in `run.json`.
 
