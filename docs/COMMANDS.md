@@ -74,7 +74,37 @@ node src/cli.mjs run \
 - `run` accepts `--model-timeout-ms <ms>` to bound each model call (default 5 minutes).
 - `run` rejects `--run-root` paths inside common system directories or pointing at non-empty directories.
 
-## Helper self-checks
+## Offline regression tests
+All tests below are deterministic, do not invoke `openclaw`, and do not call
+any provider. They are safe to run on every change; they do not consume API
+credit.
+
+### Run the full offline suite
 ```bash
-node validation/tests/cli-helpers.test.mjs
+./scripts/run-tests.sh
+# or
+npm test
 ```
+
+### Run individual files
+```bash
+# Pure-helper self-checks (parseFlags, validateExplicitRunRoot, parseTimeoutMs,
+# prompt nonces, sanitizeErrorForPersistence, slugify, safeModelName, etc.)
+node validation/tests/cli-helpers.test.mjs
+
+# Extended helper coverage (createRunDir collision-safety + run-root rejection,
+# getConfiguredApiModels filtering/sorting, prompt structural contract,
+# sanitizeErrorForPersistence edge cases, parseFlags edge cases).
+node validation/tests/cli-extended.test.mjs
+
+# CLI-boundary tests via spawnSync. These exercise the real cli.mjs entrypoint
+# but only along paths that fail before any openclaw subprocess is spawned
+# (unknown flag, duplicate flag, bad --model-timeout-ms, forbidden --run-root).
+node validation/tests/cli-cli.test.mjs
+```
+
+## Optional live checks
+End-to-end live runs cost API credit. They are not run by `npm test` and must
+be invoked explicitly. See the validation commands above
+(`Happy-path validation`, `Failure-path validation`) for the sanctioned
+manual flows.

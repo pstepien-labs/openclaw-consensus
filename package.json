@@ -11,7 +11,8 @@
     "help": "node src/cli.mjs help",
     "models": "node src/cli.mjs models",
     "install:skill": "./scripts/install-skill.sh",
-    "uninstall:skill": "./scripts/uninstall-skill.sh"
+    "uninstall:skill": "./scripts/uninstall-skill.sh",
+    "test": "./scripts/run-tests.sh"
   },
   "engines": {
     "node": ">=20"

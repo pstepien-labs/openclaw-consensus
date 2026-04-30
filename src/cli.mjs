@@ -641,6 +641,7 @@ export {
   buildFinalPrompt,
   normalizeSelectedModels,
   getConfiguredApiModels,
+  createRunDir,
   RUN_FLAG_ALLOWLIST,
   MODELS_FLAG_ALLOWLIST,
   DEFAULT_MODEL_TIMEOUT_MS,

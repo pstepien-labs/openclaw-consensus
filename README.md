@@ -90,7 +90,11 @@ The CLI applies a small set of conservative guardrails. These are belt-and-suspe
 - `run.json` truncates and redacts the brief from any persisted error message
 - the run-time check that openclaw executed the requested model (not a fallback) is the authoritative protection against silent provider substitution
 
-See `validation/tests/cli-helpers.test.mjs` for self-checks of these helpers.
+See `validation/tests/` for offline regression tests covering these helpers,
+prompt structure, run-directory creation, and CLI-boundary argument handling.
+Run them with `npm test` (or `./scripts/run-tests.sh`). The offline suite does
+not invoke `openclaw` and does not consume API credit; live end-to-end runs
+are documented in `docs/COMMANDS.md` and must be invoked explicitly.
 
 ## Notes on the orchestrator model
 The repo contract says the orchestrator should use the current OpenClaw session model. When the skill is used from chat, the agent should pass that model explicitly to the CLI. For standalone shell use, the CLI falls back to the workspace agent primary model if `--orchestrator-model` is omitted, and records that source in `run.json`.
