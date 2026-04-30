@@ -2,10 +2,16 @@
 
 Focused OpenClaw-native skill and repo-local CLI for fixed 2-round cross-model deliberation.
 
-## What it does
-OpenClaw Consensus runs one brief through 2-4 explicitly selected API-backed models from the active OpenClaw-configured pool, gives them one shared reconciliation round, and then writes a final synthesis covering consensus, disagreements, uncertainty, and narrow escalation points.
+## What this is
+OpenClaw Consensus runs one brief through 2-4 explicitly selected API-backed models from the active OpenClaw-configured pool, gives them one shared reconciliation round, and then writes a final synthesis covering:
+- consensus
+- disagreements
+- uncertainty
+- narrow escalation points
 
-## Locked MVP rules
+This repo is intentionally small. It is a **local OpenClaw skill + CLI runtime**, not a SaaS, not a hosted workflow, and not a claim that model agreement replaces expert judgment.
+
+## MVP boundaries
 - exactly 2 rounds
 - generic workflow only
 - explicit model shortlist required
@@ -20,8 +26,8 @@ OpenClaw Consensus runs one brief through 2-4 explicitly selected API-backed mod
 - `scripts/install-skill.sh` — dev install via workspace copy
 - `scripts/uninstall-skill.sh` — dev uninstall flow
 - `docs/` — product/runtime/prompt/artifact contracts
-- `tasks/` — execution artifacts and validation history
-- `validation/` — captured proof from install/run/failure checks
+- `tasks/` — execution artifacts and project history
+- `validation/` — captured proof for release claims
 
 ## Quick start
 ### 1. Install the local skill into this workspace
@@ -59,8 +65,8 @@ runs/<timestamp>-<slug>/
 ./scripts/uninstall-skill.sh
 ```
 
-## Current validation status
-This repo now includes captured proof for:
+## Validation status
+This repo includes captured proof for:
 - local install
 - local uninstall + reinstall
 - model-pool inspection
@@ -70,13 +76,20 @@ This repo now includes captured proof for:
 
 See `validation/2026-04-29/` for the recorded outputs.
 
-## Notes on orchestration model
+## Security / secret posture
+- provider keys are **not** stored in this repo
+- runtime outputs live under `runs/`, which is gitignored by default
+- public validation artifacts were checked for tracked secret patterns and scrubbed of machine-local absolute paths where needed
+
+## Notes on the orchestrator model
 The repo contract says the orchestrator should use the current OpenClaw session model. When the skill is used from chat, the agent should pass that model explicitly to the CLI. For standalone shell use, the CLI falls back to the workspace agent primary model if `--orchestrator-model` is omitted, and records that source in `run.json`.
 
-## Status
-This is a real local skill + runtime MVP with validation evidence. It is still intentionally narrow:
+## What this repo does not do
 - no domain presets
 - no web UI
 - no local-model routing
 - no extra rounds
-- no claim that agreement replaces expert judgment
+- no automatic trust in consensus
+
+## Status
+This is a real, usable MVP. The point is not feature sprawl; the point is a truthful, inspectable, artifact-first consensus workflow that is already useful inside OpenClaw.

@@ -1,4 +1,4 @@
-Installed openclaw-consensus skill copy: /Users/digitalbear/.openclaw/workspace/skills/openclaw-consensus
+Installed openclaw-consensus skill copy: ~/.openclaw/workspace/skills/openclaw-consensus
 🧭 openclaw-consensus ✓ Ready
 
 Run a fixed 2-round cross-model deliberation through the repo-local OpenClaw Consensus runtime.

@@ -2,6 +2,10 @@
 
 This directory captures the proof used for release claims.
 
+Notes:
+- machine-local absolute paths were scrubbed where they were not important to the claim
+- provider credentials are not stored here
+
 Current evidence set:
 - `2026-04-29/install.log`
 - `2026-04-29/uninstall.log`
