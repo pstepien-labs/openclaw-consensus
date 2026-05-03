@@ -509,7 +509,7 @@ function renderModelArtifact(model, text) {
 
 function runModel({ model, prompt, phase, timeoutMs }) {
   const result = runCommand(
-    ['infer', 'model', 'run', '--json', '--model', model, '--prompt', prompt],
+    ['infer', 'model', 'run', '--gateway', '--json', '--model', model, '--prompt', prompt],
     { allowFailure: true, timeoutMs }
   );
   const stderr = result.stderr || '';
